@@ -11,7 +11,7 @@
 				</a>
 			</div>
 			<div class="desc">
-				github.com/zxysilent/blog
+				github.com/wetorx/blog
 			</div>
 		</div>
 		<div class="main">

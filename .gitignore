@@ -7,3 +7,8 @@ docs/*
 blog
 blog.*
 publish*
+dist.zip
+归档.zip
+.gitignore
+.DS_Store
+views.zip
