@@ -1,6 +1,9 @@
 package model
 
-import "strconv"
+import (
+	"net/url"
+	"strconv"
+)
 
 // Cate 分类
 type Cate struct {
@@ -36,6 +39,7 @@ func CateGet(id int) (*Cate, bool) {
 
 // CateName 通过name 查询分类
 func CateName(nam string) (*Cate, bool) {
+	nam, _ = url.QueryUnescape(nam)
 	mod := &Cate{
 		Name: nam,
 	}

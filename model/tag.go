@@ -1,6 +1,9 @@
 package model
 
-import "strconv"
+import (
+	"net/url"
+	"strconv"
+)
 
 // Tag 标签
 type Tag struct {
@@ -32,6 +35,7 @@ func tagIds(ids []int) map[int]*Tag {
 
 // TagName 通过name 查询标签
 func TagName(nam string) (*Tag, bool) {
+	nam, _ = url.QueryUnescape(nam)
 	mod := &Tag{
 		Name: nam,
 	}
