@@ -1,5 +1,7 @@
 package model
 
+import "strconv"
+
 //PostTag 文章标签
 type PostTag struct {
 	Id     int   `xorm:"not null pk autoincr INT(11)" json:"id"`
@@ -7,6 +9,21 @@ type PostTag struct {
 	TagId  int   `xorm:"not null unique(post_tag) INT(11)" json:"tag_id"`
 	Post   *Post `xorm:"-" json:"post"`
 	Tag    *Tag  `xorm:"-" json:"tag"`
+}
+
+// PostsTags 文章列表对应的所有标签
+func PostsTags(posts *[]Post) [][]PostTag {
+
+	ps, err := strconv.Atoi(MapOpts.MustGet("page_size"))
+	if err != nil {
+		ps = 6
+	}
+	mods := make([][]PostTag, 0, ps)
+	for _, post := range *posts {
+		tags, _ := PostTags(post.Id)
+		mods = append(mods, tags)
+	}
+	return mods
 }
 
 // PostTags 文章对应的标签

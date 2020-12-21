@@ -9,6 +9,7 @@ import (
 
 	"github.com/labstack/echo/v4"
 	"github.com/zxysilent/utils"
+
 )
 
 // IndexView 主页面
@@ -20,6 +21,12 @@ func IndexView(ctx echo.Context) error {
 	}
 	ps, _ := atoi(model.MapOpts.MustGet("page_size"), 6)
 	mods, _ := model.PostPage(pi, ps)
+	tags := model.PostsTags(&mods)
+	hastag := make([]bool, len(tags))
+	for i, val := range tags {
+		hastag[i] = len(val) > 0
+	}
+
 	total := model.PostCount()
 	naver := model.Naver{}
 	if pi > 1 {
@@ -29,8 +36,10 @@ func IndexView(ctx echo.Context) error {
 		naver.Next = "/?page=" + strconv.Itoa(pi+1)
 	}
 	return ctx.Render(http.StatusOK, "index.html", map[string]interface{}{
-		"Posts": mods,
-		"Naver": naver,
+		"Posts":  mods,
+		"Tags":   tags,
+		"HasTag": hastag,
+		"Naver":  naver,
 	})
 }
 

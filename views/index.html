@@ -18,13 +18,22 @@
                             <span class="date">{{ date $v.CreateTime "2006-01-02" }}</span>
                         </div>
                         <div class="comment">
-                            <a href="/post/{{$v.Path}}.html#comments">comments</a>
+                            <a href="/post/{{$v.Path}}.html#comments">comments: {{$v.CommentNum}}</a>
                         </div>
                     </div>
                     <h1 class="title"><a href="/post/{{$v.Path}}.html">{{$v.Title}}</a></h1>
                     <div class="entry-content">
                         {{ str2html $v.Summary }}
                         <p class="more"><a href="/post/{{$v.Path}}.html">阅读全文 »</a></p>
+                        {{if (index $.HasTag $k)}}
+                        <div class="tags">
+                            {{range $kk, $vv := (index $.Tags $k) }}
+                                <a href="/tag/{{$vv.Tag.Name}}" data-tag="{{$vv.Tag.Name}}">
+                                    <code class="notebook">{{$vv.Tag.Intro}}</code>
+                                </a>
+                            {{end}}
+                        </div>
+                        {{end}}
                     </div>
                 </article>
                 {{ end }}
