@@ -32,7 +32,7 @@
 				<FormItem label="Github" prop="github_url">
 					<Input v-model="base.github_url" search enter-button="确    定" @on-search="cmtSave('github_url')"></Input>
 				</FormItem>
-				<FormItem label="Weibo" prop="weibo_url">
+				<FormItem label="Bilibili" prop="weibo_url">
 					<Input v-model="base.weibo_url" search enter-button="确    定" @on-search="cmtSave('weibo_url')"></Input>
 				</FormItem>
 				<FormItem label="备案号" prop="miitbeian">

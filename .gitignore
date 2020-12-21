@@ -12,3 +12,4 @@ dist.zip
 .gitignore
 .DS_Store
 views.zip
+static/font/old/*
