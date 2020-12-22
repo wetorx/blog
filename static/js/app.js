@@ -2,6 +2,9 @@
     var getById = function (el) {
       return doc.getElementById(el);
     };
+    var getByClass = function (el) {
+      return doc.getElementsByClassName(el);
+    };
   
     //from qwrap
     var getDocRect = function (doc) {
@@ -374,6 +377,8 @@
       });
     };
   
+
+
     hljs.init();
     win.addEventListener('load', function () {
       hljs.mark(true);
@@ -381,6 +386,32 @@
     win.addEventListener('hashchange', function () {
       hljs.removeMark();
       hljs.mark();
+    });
+    
+
+    /**
+     * 自定义初始化脚本
+     */
+    line_num_width = getByClass('line-num')[0].clientWidth;
+    codes = getByClass('app-code');
+    names = getByClass('name');
+    for(j = 0,len = names.length; j < len; j++) {
+      // 改变代码框语言的层级，向上移动一级
+      names[0].parentNode.parentNode.appendChild(names[0]);
+    }
+    var resize = function () {
+      //调整代码框的宽度
+      for(j = 0,len = codes.length; j < len; j++) {
+        ul = codes[j].getElementsByTagName('ul')[0];
+        ul.style = ''
+        if(ul.clientWidth <  codes[j].clientWidth - line_num_width){
+          ul.style.width = (codes[j].clientWidth - line_num_width) + 'px';
+        }
+      }
+    }
+    resize();
+    win.addEventListener('resize', function () {
+      resize();
     });
   
   })(window, document);

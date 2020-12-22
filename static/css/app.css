@@ -173,7 +173,6 @@ h1.intro {
     display: block;
     background: #fff;
     color: #111;
-    overflow-x: auto;
     -webkit-text-size-adjust: none
 }
 
@@ -615,7 +614,7 @@ article {
 article .meta {
     position: relative;
     float: right;
-    color: #555;
+    color: #444;
     font-size: .9em;
     line-height: 2;
     width: auto;
@@ -623,7 +622,7 @@ article .meta {
 }
 
 article .meta a {
-    color: #999
+    color: #777
 }
 
 article .meta .comment,
@@ -633,11 +632,11 @@ article .meta .tags {
 }
 
 article h1.title {
-    color: #333;
+    color: #222;
     font-size: 2em;
-    font-weight: 300;
+    font-weight: 500;
     line-height: 35px;
-    margin-bottom: 25px
+    margin-bottom: 30px
 }
 
 article h1.title a {
@@ -733,7 +732,7 @@ article pre b.name {
     position: absolute;
     line-height: 1;
     top: 10px;
-    right: 10px;
+    right: 25px;
     font-size: 60px;
     pointer-events: none;
     opacity: 0.2;
@@ -884,7 +883,7 @@ article .app-code>ul {
 article .app-code li {
     list-style: decimal-leading-zero;
     border-left: 1px solid #ddd;
-    padding-left: 2px;
+    padding: 0 10px;
     position: relative
 }
 
@@ -912,7 +911,8 @@ article .app-code li:nth-of-type(even) {
 }
 
 article .entry-content pre .app-code {
-    background-color: #eee
+    background-color: #eee;
+    overflow-x: auto;
 }
 
 article .entry-content pre code {
