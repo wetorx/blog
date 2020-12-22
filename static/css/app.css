@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    color: #666;
+    color: #222;
     -webkit-text-size-adjust: none;
     -webkit-transition: -webkit-transform .2s cubic-bezier(.4, .01, .165, .99);
     transition: -webkit-transform .2s cubic-bezier(.4, .01, .165, .99);
@@ -172,8 +172,7 @@ h1.intro {
 .hljs {
     display: block;
     background: #fff;
-    padding: .5em;
-    color: #333;
+    color: #111;
     overflow-x: auto;
     -webkit-text-size-adjust: none
 }
@@ -695,7 +694,7 @@ article blockquote a {
 }
 
 article code {
-    font-family: Consolas, "Courier New", Courier, mono, serif;
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;;
     font-size: 80%;
     margin: 0 2px;
     padding: 4px 5px;
@@ -707,15 +706,16 @@ article code {
 article pre {
     font-family: Consolas, "Liberation Mono", Courier, monospace;
     font-size: 14px;
+    tab-size: 4;
     line-height: 1.6;
-    color: #5d6a6a;
+    color: #202020;
     padding: .6em;
     border-left: 5px solid #ccc;
     word-break: break-all;
     word-wrap: break-word;
-    white-space: pre-wrap;
     position: relative;
-    overflow: hidden
+    overflow: hidden;
+    border-left: none;
 }
 
 article pre code {
@@ -735,8 +735,8 @@ article pre b.name {
     top: 10px;
     right: 10px;
     font-size: 60px;
-    color: #eee;
-    pointer-events: none
+    pointer-events: none;
+    opacity: 0.2;
 }
 
 @media screen and (max-width:768px) {
@@ -875,7 +875,10 @@ article .app-code>ul {
     background-color: #fff;
     margin: 0;
     margin-left: 40px;
-    padding: 0
+    padding: 0;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
 }
 
 article .app-code li {
@@ -912,13 +915,8 @@ article .entry-content pre .app-code {
     background-color: #eee
 }
 
-article pre {
-    border-left: none;
-    padding: 0
-}
-
 article .entry-content pre code {
-    font-size: 12px;
+    font-size: 14px;
     background-color: #fff;
     border: 1px solid #eee;
     padding: 0;
