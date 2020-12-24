@@ -393,6 +393,7 @@
      * 自定义初始化脚本
      */
     codes = getByClass('app-code');
+    var resize = function (){}
     if(codes.length > 0){
       names = getByClass('name');
       line_num_width = getByClass('line-num')[0].clientWidth;
@@ -400,21 +401,59 @@
         // 改变代码框语言的层级，向上移动一级
         names[0].parentNode.parentNode.appendChild(names[0]);
       }
-      var resize = function () {
+      resize = function () {
         //调整代码框的宽度
         for(j = 0,len = codes.length; j < len; j++) {
           ul = codes[j].getElementsByTagName('ul')[0];
           ul.style = ''
-          if(ul.clientWidth <  codes[j].clientWidth - line_num_width){
-            ul.style.width = (codes[j].clientWidth - line_num_width) + 'px';
+          if(ul.scrollWidth > ul.clientWidth){
+            ul.style+='width: -moz-fit-content;width: -webkit-fit-content;width: fit-content;'
           }
         }
       }
       resize();
-      win.addEventListener('resize', function () {
-        resize();
-      });
     }
+    toolbar = getById('side-toolbar');
+    postmain = getById('main');
+    toolbar.style.left = (postmain.clientWidth - 40) + 'px'
 
+    win.addEventListener('resize', function () {
+      resize();
+      toolbar.style.left = (postmain.clientWidth - 40) + 'px'
+    });
+    /**
+     * 绑定回到顶部
+     */
+    getById('gotop').setAttribute('href','javascript:void(0);');
+    getById('gotop').onclick = function gotop(){
+      var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      if (currentScroll > 0) {
+        window.requestAnimationFrame(gotop);
+        window.scrollTo (0,currentScroll - (currentScroll/4));
+      }
+    }
+    /**
+     * 绑定查看/隐藏目录
+     */
+    
+    var tocshow = true;
+    tocs = getByClass('toc')
+    toc_switch = getById('showtoc')
+    if(getById('page-post') === null){
+      toc_switch.style.display = 'none';
+    }else if(tocs.length > 0){
+      toc_switch.setAttribute('href','javascript:void(0);')
+      toc_switch.onclick = function (){
+        tocshow = !tocshow;
+        if(!tocshow){
+          tocs[0].style.display = 'none';
+          toc_switch.style.color = '#777';
+        }else{
+          tocs[0].style = '';
+          toc_switch.style = '';
+        }
+      }
+    }
+    
   
   })(window, document);

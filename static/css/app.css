@@ -74,11 +74,11 @@ h1.intro {
   
 }
 @font-face {font-family: "iconfont";
-    src: url('../font/iconfont-a.eot?t=1608544107186'); /* IE9 */
-    src: url('../font/iconfont-a.eot?t=1608544107186#iefix') format('embedded-opentype'), /* IE6-IE8 */
-    url('../font/iconfont-a.woff?t=1608544107186') format('woff'),
-    url('../font/iconfont-a.ttf?t=1608544107186') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-    url('../font/iconfont-a.svg?t=1608544107186#iconfont') format('svg'); /* iOS 4.1- */
+    src: url('../font/iconfont-a.eot'); /* IE9 */
+    src: url('../font/iconfont-a.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../font/iconfont-a.woff') format('woff'),
+    url('../font/iconfont-a.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url('../font/iconfont-a.svg#iconfont') format('svg'); /* iOS 4.1- */
   }
 .iconfont {
     font-family: iconfont !important;
@@ -165,10 +165,18 @@ h1.intro {
     content: "\e612"
 }
 
+.icon-toc:before {
+    content: "\e61a";
+}
+  
+.icon-top:before {
+    content: "\e60a";
+}
+  
 .icon-bilibili:before {
     content: "\eea8";
 }
-
+  
 .hljs {
     display: block;
     background: #fff;
@@ -393,6 +401,34 @@ h1.intro {
     overflow: auto;
     z-index: 1;
     -webkit-overflow-scrolling: touch
+}
+@media screen and (max-width:768px) {
+    #showtoc {
+        display: none;
+    }
+    #side-toolbar .buttons li a{
+        padding: 12px 8px;
+    }
+}
+#side-toolbar {
+    bottom: 20px;
+    position: fixed;
+    font-size: 12px;
+    z-index: 1999;
+}
+#side-toolbar .buttons li{
+    display: block;
+    width: 100%;
+}
+@media screen and (min-width:768px) {
+    #side-toolbar .buttons li a{
+        padding: 12px 8px;
+        display: block;
+    }
+}
+#side-toolbar .buttons li a i{
+    font-size: 24px;
+    text-align: center;
 }
 
 #sidebar li,
@@ -875,9 +911,6 @@ article .app-code>ul {
     margin: 0;
     margin-left: 40px;
     padding: 0;
-    width: -moz-fit-content;
-    width: -webkit-fit-content;
-    width: fit-content;
 }
 
 article .app-code li {
