@@ -64,7 +64,29 @@ INSERT INTO `opts` VALUES ('miitbeian', '蜀ICP备16011344号-2', '网站备案�
 INSERT INTO `opts` VALUES ('page_size', '6', '文章一页显示的条数');
 INSERT INTO `opts` VALUES ('site_url', 'https://blog.zxysilent.com', '网站地址');
 INSERT INTO `opts` VALUES ('title', 'zxysilent', '网站标题');
-INSERT INTO `opts` VALUES ('weibo_url', 'https://weibo.com/u/2909680165', '微博地址');
+INSERT INTO `opts` VALUES ('bili_url', 'https://weibo.com/u/2909680165', '微博地址');
+
+-- ----------------------------
+-- Table structure for opts_key
+-- ----------------------------
+DROP TABLE IF EXISTS `opts_key`;
+CREATE TABLE `opts_key` (
+  `key` varchar(64) NOT NULL DEFAULT '',
+  `value` varchar(2048) NOT NULL DEFAULT '',
+  `intro` varchar(255) NOT NULL DEFAULT '',
+  KEY `key` (`key`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of opts
+-- ----------------------------
+INSERT INTO `opts_key` VALUES ('kuaiyun_accesskey', '', 'accessKey');
+INSERT INTO `opts_key` VALUES ('kuaiyun_secretkey', '', 'secretKey');
+INSERT INTO `opts_key` VALUES ('kuaiyun_voucher', '', '用户凭证');
+INSERT INTO `opts_key` VALUES ('kuaiyun_resource', '', 'resource');
+INSERT INTO `opts_key` VALUES ('kuaiyun_bucketname', '', '空间名');
+INSERT INTO `opts_key` VALUES ('kuaiyun_domain', '', '绑定域名');
+INSERT INTO `opts_key` VALUES ('kuaiyun_cloudpath', 'web/', '上传目录');
 
 -- ----------------------------
 -- Table structure for post

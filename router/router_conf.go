@@ -17,6 +17,7 @@ import (
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 	"github.com/zxysilent/utils"
+
 )
 
 var funcMap template.FuncMap
@@ -89,7 +90,7 @@ func (t *TplRender) Render(w io.Writer, name string, data interface{}, ctx echo.
 		mp["logo_url"] = model.MapOpts.MustGet("logo_url")
 		mp["keywords"] = model.MapOpts.MustGet("keywords")
 		mp["miitbeian"] = model.MapOpts.MustGet("miitbeian")
-		mp["weibo_url"] = model.MapOpts.MustGet("weibo_url")
+		mp["bili_url"] = model.MapOpts.MustGet("bili_url")
 		mp["custom_js"] = model.MapOpts.MustGet("custom_js")
 		mp["github_url"] = model.MapOpts.MustGet("github_url")
 		mp["description"] = model.MapOpts.MustGet("description")

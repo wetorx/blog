@@ -13,3 +13,4 @@ dist.zip
 .DS_Store
 views.zip
 static/font/old/*
+conf/conf.toml

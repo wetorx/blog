@@ -4,13 +4,13 @@ import (
 	"blog/conf"
 	"log"
 	"strings"
+	// 数据库驱动
 
+	_ "github.com/go-sql-driver/mysql"
+	"github.com/zxysilent/logs"
 	"xorm.io/xorm"
 	"xorm.io/xorm/caches"
 
-	// 数据库驱动
-	_ "github.com/go-sql-driver/mysql"
-	"github.com/zxysilent/logs"
 )
 
 // Db 数据库操作句柄
@@ -43,6 +43,7 @@ func Init() {
 	Db = db
 	//缓存
 	initMap()
+	initKeyMap()
 	logs.Info("model init")
 }
 

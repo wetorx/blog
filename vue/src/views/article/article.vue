@@ -29,7 +29,7 @@
 				</Form>
 				<div style="min-height: 600px;height: calc(100vh - 145px);">
 					<button ref="diy" type="button" @click="diyMore" class="op-icon ivu-icon ivu-icon-md-code" aria-hidden="true" title="更多"></button>
-					<mavon-editor ref="md" @imgAdd="imgAdd" :boxShadow="false" @change="change" :toolbars="toolbars" v-model="dataForm.markdown_content" style="height:100%">
+					<mavon-editor ref="md" @imgAdd="kuaiyunUploadFile" :boxShadow="false" @change="change" :toolbars="toolbars" v-model="dataForm.markdown_content" style="height:100%">
 					</mavon-editor>
 				</div>
 				</Col>
@@ -75,7 +75,9 @@ import toolbars from "./toolbars";
 import { apiCateAll } from "@/api/cate";
 import { apiTagAll } from "@/api/tag";
 import util from "@/utils.js";
+import axios from "axios";
 import { apiPostGet, admPostOpts, apiPostTagGet } from "@/api/post";
+import { admOptsPrivate } from "@/api/opts";
 // 通用 文章/页面 + 添加/修改
 // 减少js体积
 export default {
@@ -105,7 +107,10 @@ export default {
 			dataRules: {
 				title: [{ required: true, message: " ", trigger: "blur" }],
 				path: [{ required: true, message: " ", trigger: "blur" }]
-			}
+			},
+			kuaiyun_token: null,
+			kuaiyun_opts: {}
+
 		};
 	},
 	methods: {
@@ -124,6 +129,90 @@ export default {
 					}
 				});
 			}
+			admOptsPrivate().then(resp => {
+				if (resp.code == 200) {
+					this.kuaiyun_opts = resp.data;
+					this.kuaiyunGetToken();
+				} else {
+					this.kuaiyun_opts = {};
+				}
+			});
+			
+		},
+		kuaiyunGetToken(){
+			if (this.kuaiyun_token == null){
+				axios({
+					url: "http://api.storagesdk.com/restful/storageapi/storage/getToken",
+					method: 'post',
+					data:JSON.stringify({
+						voucher: this.kuaiyun_opts.kuaiyun_voucher,
+						accessKey: this.kuaiyun_opts.kuaiyun_accesskey,
+						secretKey: this.kuaiyun_opts.kuaiyun_secretkey,
+						resource: this.kuaiyun_opts.kuaiyun_resource,
+					}),
+					headers:{
+						'Content-Type':"application/json; charset=utf-8"
+					}
+				}).then(resp=>{
+					this.kuaiyun_token = resp.data.message.split(':')[1]
+				})
+			}
+		},
+		kuaiyunUploadFile(pos,$file){
+			if (this.kuaiyun_token != null){
+				var now = new Date();
+				var filename = this.kuaiyun_opts.kuaiyun_cloudpath + now.getFullYear() + '/' + (now.getMonth()+1) + '/' + 
+					this.dateFormat('Ymd',now) + 
+					Math.round(Math.random()*10000).toString() + '_' + 
+					Math.round(Math.random()*10000).toString() + 
+					$file._name.substr($file._name.lastIndexOf("."));
+				//console.log(filename)
+				axios({
+					url: "http://api.storagesdk.com/restful/storageapi/file/uploadFile",
+					method: 'post',
+					data: $file,
+					headers:{
+						'Content-Type':"application/json; charset=utf-8",
+						'token': this.kuaiyun_token,
+						'fileName': util.Base64.encode(filename),
+						'bucketName': this.kuaiyun_opts.kuaiyun_bucketname,
+						'resource': this.kuaiyun_opts.kuaiyun_resource,
+						'length': $file.size
+					}
+				}).then(resp=>{
+					//console.log(resp.data)
+					if (resp.status < 200 || resp.status >= 300) {
+						this.$Message.warning("图片上传失败,HTTP Error: " + resp.status);
+						return;
+					}
+					if (!resp.data || resp.data.code != 0) {
+						this.$Message.warning("图片上传失败");
+						return;
+					}
+					this.$refs.md.$img2Url(pos, this.kuaiyun_opts.kuaiyun_domain + '/' + filename);
+				})
+			}else{
+				this.kuaiyunGetToken();
+			}
+		},
+		dateFormat(fmt, date) {
+    		let ret;
+    		const opt = {
+    		    "Y+": date.getFullYear().toString(),        // 年
+    		    "m+": (date.getMonth() + 1).toString(),     // 月
+    		    "d+": date.getDate().toString(),            // 日
+    		    "H+": date.getHours().toString(),           // 时
+    		    "M+": date.getMinutes().toString(),         // 分
+				"S+": date.getSeconds().toString()          // 秒
+    		    // 有其他格式化字符需求可以继续添加，必须转化成字符串
+    		};
+    		for (let k in opt) {
+    		    ret = new RegExp("(" + k + ")").exec(fmt);
+    		    if (ret) {
+    		        fmt = fmt.replace(ret[1], (ret[1].length == 1) ? (opt[k]) : (opt[k].padStart(ret[1].length, "0")))
+    		    };
+    		};
+    		return fmt;
 		},
 		getCate() {
 			apiCateAll().then(resp => {
@@ -209,7 +298,7 @@ export default {
 				}
 				this.$refs.md.$img2Url(pos, process.env.VUE_APP_SRV + json.data);
 			};
-
+			
 			formData.append("token", util.getToken());
 			formData.append("file", $file);
 			xhr.send(formData);

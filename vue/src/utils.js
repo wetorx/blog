@@ -73,4 +73,6 @@ utils.Role.allow = (role, arr) => {
 	}
 	return false;
 };
+
+utils.Base64 = Base64;
 export default utils;

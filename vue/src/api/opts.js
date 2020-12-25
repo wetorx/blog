@@ -11,3 +11,16 @@ export const apiOptsGet = key => {
 export const admOptsEdit = data => {
 	return fetch.post("/adm/opts/edit", data);
 };
+
+// 获取私有配置项
+export const admOptsPrivate = () => {
+	return fetch.get(`/adm/optsp/private`);
+};
+// 获取某个私有配置项
+export const admOptsPrivateGet = key => {
+	return fetch.get(`/adm/optsp/${key}`);
+};
+// 编辑某个私有配置项
+export const admOptsPrivateEdit = data => {
+	return fetch.post("/adm/optsp/edit", data);
+};

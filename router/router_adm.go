@@ -4,6 +4,7 @@ import (
 	"blog/control"
 
 	"github.com/labstack/echo/v4"
+
 )
 
 // admRouter 登录访问
@@ -23,4 +24,8 @@ func admRouter(adm *echo.Group) {
 	adm.POST(`/tag/add`, control.TagAdd)              // 添加标签
 	adm.POST(`/tag/edit`, control.TagEdit)            // 编辑标签
 	adm.POST(`/opts/edit`, control.OptsEdit)          // 编辑配置项
+
+	adm.GET(`/optsp/private`, control.OptsPrivate)   // 获取全部私有配置项
+	adm.GET(`/optsp/:key`, control.OptsPrivateGet)   // 获取一个私有配置项
+	adm.POST(`/optsp/edit`, control.OptsPrivateEdit) // 修改私有配置项
 }

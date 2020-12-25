@@ -207,6 +207,14 @@ const appRouter = [
 				component: () => import("@/views/setting/base.vue")
 			},
 			{
+				path: "private",
+				meta: {
+					title: "私有设置"
+				},
+				name: "setting-private",
+				component: () => import("@/views/setting/private.vue")
+			},
+			{
 				path: "comment",
 				meta: {
 					title: "评论设置",

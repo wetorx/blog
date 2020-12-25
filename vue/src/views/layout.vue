@@ -75,6 +75,8 @@
 						</template>
 						<MenuItem name="setting-base" to="/setting/base">
 						<Icon type="ios-cog-outline" />基本设置</MenuItem>
+						<MenuItem name="setting-private" to="/setting/private">
+						<Icon type="ios-cog-outline" />私有设置</MenuItem>
 						<MenuItem name="setting-comment" to="/setting/comment">
 						<Icon type="ios-text-outline" />评论设置</MenuItem>
 						<MenuItem name="setting-analytic" to="/setting/analytic">
