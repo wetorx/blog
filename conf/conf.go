@@ -15,7 +15,12 @@ type appconf struct {
 	Srv     string `toml:"srv"`
 	Jwtkey  string `toml:"jwtkey"`
 	Jwtexp  int    `toml:"jwtexp"`
-	Author  struct {
+	Tls     bool   `toml:"tls"`
+	Https   struct {
+		Crt string `toml:"crt"`
+		Key string `toml:"key"`
+	}
+	Author struct {
 		Name    string `toml:"name"`
 		Website string `toml:"website"`
 	} `toml:"author"`

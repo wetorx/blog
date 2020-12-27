@@ -13,6 +13,9 @@ import (
 // RunApp 入口
 func RunApp() {
 	engine := echo.New()
+	if conf.App.Tls {
+		engine.Pre(middleware.HTTPSRedirect()) //使用重定向中间件将http连接重定向到https
+	}
 	engine.Renderer = initRender()                    // 初始渲染引擎
 	engine.Use(midRecover, midLogger)                 // 恢复 日志记录
 	engine.Use(middleware.CORSWithConfig(crosConfig)) // 跨域设置
@@ -22,6 +25,7 @@ func RunApp() {
 	RegDocs(engine)                                   // 注册文档
 	engine.Static(`/dist`, "dist")                    // 静态目录 - 后端专用
 	engine.Static(`/static`, "static")                // 静态目录
+	engine.Static(`/.well-known`, ".well-known")      // acme.sh验证用
 	engine.File(`/favicon.ico`, "favicon.ico")        // ico
 	engine.File("/dashboard*", "dist/index.html")     // 前后端分离页面
 
@@ -43,7 +47,14 @@ func RunApp() {
 	apiRouter(api)                      // 注册分组路由
 	adm := engine.Group("/adm", midJwt) // adm/ 需要登陆才能访问
 	admRouter(adm)                      // 注册分组路由
-	err := engine.Start(conf.App.Addr)
+	var err error
+
+	if conf.App.Tls {
+		err = engine.StartTLS(conf.App.Addr, conf.App.Https.Crt, conf.App.Https.Key)
+	} else {
+		err = engine.Start(conf.App.Addr)
+	}
+
 	if err != nil {
 		log.Fatalln("run error :", err)
 	}
