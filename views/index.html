@@ -21,7 +21,10 @@
                             <a href="/post/{{$v.Path}}.html#comments">comments: {{$v.CommentNum}}</a>
                         </div>
                     </div>
-                    <h1 class="title"><a href="/post/{{$v.Path}}.html">{{$v.Title}}</a></h1>
+                    <h1 class="title">
+                        <div></div>
+                        <a href="/post/{{$v.Path}}.html">{{$v.Title}}</a>
+                    </h1>
                     <div class="entry-content">
                         {{ str2html $v.Summary }}
                         <p class="more"><a href="/post/{{$v.Path}}.html">阅读全文 »</a></p>

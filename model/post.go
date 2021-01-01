@@ -5,6 +5,7 @@ import (
 	"time"
 
 	"github.com/zxysilent/utils"
+
 )
 
 // // Post 文章
@@ -62,6 +63,14 @@ func PostPage(pi, ps int) ([]Post, error) {
 	return mods, err
 }
 
+// PostSearchPage 查询结果分页
+func PostSearchPage(keyword string, pi int, ps int) ([]Post, error) {
+	mods := make([]Post, 0, ps)
+	like := "like '%" + keyword + "%' "
+	err := Db.Cols("id", "title", "path", "create_time", "summary", "comment_num", "options").Where("Type = 0 and Is_Public = 1 and Status = 3 and (title "+like+"or content "+like+")").Desc("create_time").Limit(ps, (pi-1)*ps).Find(&mods)
+	return mods, err
+}
+
 // PostCount 返回总数
 func PostCount() int {
 	mod := &Post{
@@ -69,6 +78,17 @@ func PostCount() int {
 		IsPublic: true,
 	}
 	count, _ := Db.UseBool("is_public").Count(mod)
+	return int(count)
+}
+
+// PostSearchCount 返回查询总数
+func PostSearchCount(keyword string) int {
+	mod := &Post{
+		Type:     0,
+		IsPublic: true,
+	}
+	like := "like '%" + keyword + "%' "
+	count, _ := Db.Where("Type = 0 and Is_Public = 1 and Status = 3 and (title " + like + "or content " + like + ")").Count(mod)
 	return int(count)
 }
 

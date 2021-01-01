@@ -61,6 +61,39 @@ func ArchivesJson(ctx echo.Context) error {
 	return ctx.JSON(utils.Succ("归档", mods))
 }
 
+// SearchView 搜索
+func SearchView(ctx echo.Context) error {
+	keyword := ctx.FormValue("keyword")
+	if keyword == "" {
+		return ctx.Render(http.StatusOK, "search.html", map[string]interface{}{
+			"Keyword": keyword,
+			"Naver":   model.Naver{},
+		})
+	}
+	pi, _ := strconv.Atoi(ctx.FormValue("page"))
+	if pi == 0 {
+		pi = 1
+	}
+	ps, _ := atoi(model.MapOpts.MustGet("page_size"), 6)
+
+	mods, _ := model.PostSearchPage(keyword, pi, ps)
+	total := model.PostSearchCount(keyword)
+	naver := model.Naver{}
+	if pi > 1 {
+		naver.Prev = "/search?keyword=" + keyword + "&page=" + strconv.Itoa(pi-1)
+	}
+	if total > (pi * ps) {
+		naver.Next = "/search?keyword=" + keyword + "&page=" + strconv.Itoa(pi+1)
+	}
+	return ctx.Render(http.StatusOK, "search.html", map[string]interface{}{
+		"Keyword": keyword,
+		"Host":    ctx.Request().URL.Host,
+		"Posts":   mods,
+		"Count":   total,
+		"Naver":   naver,
+	})
+}
+
 // CatePostView 分类文章列表
 func CatePostView(ctx echo.Context) error {
 	cate := ctx.Param("cate")

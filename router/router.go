@@ -32,6 +32,7 @@ func RunApp() {
 	//--- 页面 -- start
 	engine.GET(`/`, control.IndexView)                 // 首页
 	engine.GET(`/archives`, control.ArchivesView)      // 归档
+	engine.GET(`/search`, control.SearchView)          // 搜索
 	engine.GET(`/archives.json`, control.ArchivesJson) // 归档 json
 	engine.GET(`/tags`, control.TagsView)              // 标签
 	engine.GET(`/tags.json`, control.TagsJson)         // 标签 json

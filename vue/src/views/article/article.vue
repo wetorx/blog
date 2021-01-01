@@ -142,7 +142,7 @@ export default {
 		kuaiyunGetToken(){
 			if (this.kuaiyun_token == null){
 				axios({
-					url: "http://api.storagesdk.com/restful/storageapi/storage/getToken",
+					url: process.env.VUE_APP_KUAIYUN + "/storageapi/storage/getToken",
 					method: 'post',
 					data:JSON.stringify({
 						voucher: this.kuaiyun_opts.kuaiyun_voucher,
@@ -168,7 +168,7 @@ export default {
 					$file._name.substr($file._name.lastIndexOf("."));
 				//console.log(filename)
 				axios({
-					url: "http://api.storagesdk.com/restful/storageapi/file/uploadFile",
+					url: process.env.VUE_APP_KUAIYUN + "/storageapi/file/uploadFile",
 					method: 'post',
 					data: $file,
 					headers:{

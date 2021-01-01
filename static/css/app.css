@@ -488,7 +488,8 @@ h1.intro {
 #sidebar .buttons li a i,
 #sidebar .buttons li a span {
     display: inline-block;
-    vertical-align: middle
+    width: 86px;
+    text-align: center;
 }
 
 #sidebar .buttons li a i {
@@ -496,8 +497,7 @@ h1.intro {
     width: 25px;
     height: 45px;
     line-height: 45px;
-    text-align: center;
-    margin-right: 27px
+    text-align: center
 }
 
 #sidebar .buttons li a:hover {
@@ -673,6 +673,15 @@ article h1.title {
     font-weight: 500;
     line-height: 35px;
     margin-bottom: 30px
+}
+
+article h1.title div {
+    background-color: #888; 
+    width: 5px;
+    height: 76px;
+    left: 0;
+    top: 0;
+    position: absolute
 }
 
 article h1.title a {
@@ -1027,7 +1036,8 @@ article .entry-content pre code {
 }
 
 #searchResult .item {
-    padding: .5em 0 .3em 0
+    padding: 8px 10px;
+    border-top: 2px solid #aaa;
 }
 
 #searchResult .item .title a {

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <title>{{.title}}·站内搜索</title>
+    <link rel="canonical" href="{{.site_url}}/search" />
+    {{template "tpl-linker.html" .}}
+</head>
+
+<body>
+    {{template "tpl-naver.html" .}}
+    <div id="main">
+        <article class="post detail">
+            <h1 class="title">站内搜索</h1>
+            <!-- https://github.com/firekylin/firekylin/tree/master/www/theme/firekylin -->
+            <div class="entry-content">
+                <div id="search">
+                    <form action="/search">
+                        <div class="wrapper">
+                            <input maxlength="80" placeholder="请输入关键字..." id="keyword" name="keyword" value="{{.Keyword}}" type="search" required />
+                        </div>
+                        <input class="submit" type="submit" value="搜索" />
+                    </form>
+                </div>
+                <div id="searchResult">
+                    {{ if ne .Keyword ""}}
+                    <div class="info">
+                        本次搜索找到结果 {{ .Count }} 条
+                    </div>
+
+                    {{ if eq .Count 0}}
+                    <div class="no-result">没有找到任何结果，请更换查询词试试~</div>
+                    <div class="item">
+                        <div class="title">或者试试 Google 站内搜索： 
+                            <a target="_blank" href="https://www.google.com/?q=site:{{.Host}} {{.Keyword}}">
+                            site:{{.Host}} {{ .Keyword }}</a>
+                        </div>
+                    </div>
+                    {{ else }}
+                    {{ range $k, $v := .Posts }}
+                    <div class="item">
+                        <div class="title"><a href="/post/{{$v.Path}}.html">{{$v.Title}}</a></div>
+                        
+                        <div class="desc">
+                            {{ str2html $v.Summary }}
+                            <p class="more"><a href="/post/{{$v.Path}}.html">阅读全文 »</a></p>
+                        </div>
+                    </div>
+                    {{ end }}
+                    {{ end }}
+                    {{ end }}
+                </div>
+            </div>
+        </article>
+        <nav class="pagination">
+            {{ if ne .Naver.Prev ""}}
+            <a href="{{.Naver.Prev}}" class="prev">&laquo; 上一页</a>
+            {{end}}
+            <div class="center"><a href="/archives">博客归档</a></div>
+            {{ if ne .Naver.Next ""}}
+            <a href="{{.Naver.Next}}" class="next">下一页 &raquo;</a>
+            {{end}}
+        </nav>
+        {{template "tpl-footer.html" .}}
+        <!-- </div>> -->
+</body>
+
+</html>
