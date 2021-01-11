@@ -1,0 +1,471 @@
+.hljs {
+  display: block;
+  background: #fff;
+  color: #111;
+  -webkit-text-size-adjust: none;
+}
+
+.hljs-comment,
+.lang-bash .hljs-shebang,
+.lang-java .hljs-javadoc,
+.lang-javascript .hljs-javadoc,
+.lang-rust .hljs-preprocessor {
+  color: #969896;
+}
+
+.hljs-string,
+.lang-apache .hljs-sqbracket,
+.lang-c .hljs-preprocessor {
+  color: #df5000;
+}
+
+.lang-coffeescript {
+
+  .hljs-regexp,
+  .hljs-subst {
+    color: #df5000;
+  }
+}
+
+.lang-cpp .hljs-preprocessor,
+.lang-javascript .hljs-regexp,
+.lang-json .hljs-attribute,
+.lang-less .hljs-built_in,
+.lang-makefile .hljs-variable {
+  color: #df5000;
+}
+
+.lang-markdown {
+
+  .hljs-blockquote,
+  .hljs-emphasis,
+  .hljs-link_label,
+  .hljs-strong,
+  .hljs-value {
+    color: #df5000;
+  }
+}
+
+.lang-nginx {
+
+  .hljs-number,
+  .hljs-regexp {
+    color: #df5000;
+  }
+}
+
+.lang-objectivec .hljs-preprocessor .hljs-title,
+.lang-perl .hljs-regexp,
+.lang-php .hljs-regexp,
+.lang-scss .hljs-built_in,
+.lang-xml .hljs-value {
+  color: #df5000;
+}
+
+.hljs-keyword {
+  color: #a71d5d;
+}
+
+.lang-css {
+
+  .hljs-at_rule,
+  .hljs-important {
+    color: #a71d5d;
+  }
+}
+
+.lang-go .hljs-typename,
+.lang-haskell .hljs-type,
+.lang-http .hljs-request,
+.lang-ini .hljs-setting,
+.lang-java .hljs-javadoctag {
+  color: #a71d5d;
+}
+
+.lang-javascript {
+
+  .hljs-javadoctag,
+  .hljs-tag {
+    color: #a71d5d;
+  }
+}
+
+.lang-less {
+
+  .hljs-at_rule,
+  .hljs-tag {
+    color: #a71d5d;
+  }
+}
+
+.lang-nginx .hljs-title,
+.lang-objectivec .hljs-preprocessor,
+.lang-php .hljs-phpdoc {
+  color: #a71d5d;
+}
+
+.lang-scss {
+
+  .hljs-at_rule,
+  .hljs-important,
+  .hljs-tag {
+    color: #a71d5d;
+  }
+}
+
+.lang-sql .hljs-built_in,
+.lang-stylus .hljs-at_rule,
+.lang-swift .hljs-preprocessor {
+  color: #a71d5d;
+}
+
+.lang-apache {
+
+  .hljs-cbracket,
+  .hljs-common,
+  .hljs-keyword {
+    color: #0086b3;
+  }
+}
+
+.lang-bash {
+
+  .hljs-built_in,
+  .hljs-literal {
+    color: #0086b3;
+  }
+}
+
+.lang-c {
+
+  .hljs-built_in,
+  .hljs-number {
+    color: #0086b3;
+  }
+}
+
+.lang-coffeescript {
+
+  .hljs-built_in,
+  .hljs-literal,
+  .hljs-number {
+    color: #0086b3;
+  }
+}
+
+.lang-cpp {
+
+  .hljs-built_in,
+  .hljs-number {
+    color: #0086b3;
+  }
+}
+
+.lang-cs {
+
+  .hljs-built_in,
+  .hljs-number {
+    color: #0086b3;
+  }
+}
+
+.lang-css {
+
+  .hljs-attribute,
+  .hljs-function,
+  .hljs-hexcolor,
+  .hljs-number {
+    color: #0086b3;
+  }
+}
+
+.lang-go {
+
+  .hljs-built_in,
+  .hljs-constant {
+    color: #0086b3;
+  }
+}
+
+.lang-haskell .hljs-number {
+  color: #0086b3;
+}
+
+.lang-http {
+
+  .hljs-attribute,
+  .hljs-literal {
+    color: #0086b3;
+  }
+}
+
+.lang-java .hljs-number {
+  color: #0086b3;
+}
+
+.lang-javascript {
+
+  .hljs-built_in,
+  .hljs-literal,
+  .hljs-number {
+    color: #0086b3;
+  }
+}
+
+.lang-json .hljs-number {
+  color: #0086b3;
+}
+
+.lang-less {
+
+  .hljs-attribute,
+  .hljs-function,
+  .hljs-hexcolor,
+  .hljs-number {
+    color: #0086b3;
+  }
+}
+
+.lang-makefile .hljs-keyword,
+.lang-markdown .hljs-link_reference,
+.lang-nginx .hljs-built_in {
+  color: #0086b3;
+}
+
+.lang-objectivec {
+
+  .hljs-built_in,
+  .hljs-literal,
+  .hljs-number {
+    color: #0086b3;
+  }
+}
+
+.lang-php {
+
+  .hljs-literal,
+  .hljs-number {
+    color: #0086b3;
+  }
+}
+
+.lang-puppet .hljs-function,
+.lang-python .hljs-number {
+  color: #0086b3;
+}
+
+.lang-ruby {
+
+  .hljs-constant,
+  .hljs-number,
+  .hljs-prompt,
+  .hljs-subst .hljs-keyword,
+  .hljs-symbol {
+    color: #0086b3;
+  }
+}
+
+.lang-rust .hljs-number {
+  color: #0086b3;
+}
+
+.lang-scss {
+
+  .hljs-attribute,
+  .hljs-function,
+  .hljs-hexcolor,
+  .hljs-number,
+  .hljs-preprocessor {
+    color: #0086b3;
+  }
+}
+
+.lang-sql .hljs-number {
+  color: #0086b3;
+}
+
+.lang-stylus {
+
+  .hljs-attribute,
+  .hljs-hexcolor,
+  .hljs-number,
+  .hljs-params {
+    color: #0086b3;
+  }
+}
+
+.lang-swift {
+
+  .hljs-built_in,
+  .hljs-number {
+    color: #0086b3;
+  }
+}
+
+.lang-apache .hljs-tag,
+.lang-cs .hljs-xmlDocTag,
+.lang-css .hljs-tag,
+.lang-stylus .hljs-tag,
+.lang-xml .hljs-title {
+  color: #63a35c;
+}
+
+.lang-bash .hljs-variable {
+  color: #333;
+}
+
+.lang-cs .hljs-preprocessor {
+  color: #333;
+
+  .hljs-keyword {
+    color: #333;
+  }
+}
+
+.lang-css {
+
+  .hljs-attr_selector,
+  .hljs-value {
+    color: #333;
+  }
+}
+
+.lang-ini {
+
+  .hljs-keyword,
+  .hljs-value {
+    color: #333;
+  }
+}
+
+.lang-javascript .hljs-tag .hljs-title,
+.lang-makefile .hljs-constant,
+.lang-nginx .hljs-variable,
+.lang-scss .hljs-variable,
+.lang-xml .hljs-tag {
+  color: #333;
+}
+
+.lang-bash .hljs-title,
+.lang-c .hljs-title,
+.lang-coffeescript .hljs-title,
+.lang-cpp .hljs-title,
+.lang-cs .hljs-title {
+  color: #795da3;
+}
+
+.lang-css {
+
+  .hljs-class,
+  .hljs-id,
+  .hljs-pseudo {
+    color: #795da3;
+  }
+}
+
+.lang-diff .hljs-chunk {
+  color: #795da3;
+}
+
+.lang-haskell {
+
+  .hljs-pragma,
+  .hljs-title {
+    color: #795da3;
+  }
+}
+
+.lang-ini .hljs-title,
+.lang-java .hljs-title,
+.lang-javascript .hljs-title {
+  color: #795da3;
+}
+
+.lang-less {
+
+  .hljs-class,
+  .hljs-id,
+  .hljs-pseudo {
+    color: #795da3;
+  }
+}
+
+.lang-makefile .hljs-title,
+.lang-objectivec .hljs-title,
+.lang-perl .hljs-sub,
+.lang-php .hljs-title,
+.lang-puppet .hljs-title {
+  color: #795da3;
+}
+
+.lang-python {
+
+  .hljs-decorator,
+  .hljs-title {
+    color: #795da3;
+  }
+}
+
+.lang-ruby {
+
+  .hljs-parent,
+  .hljs-title {
+    color: #795da3;
+  }
+}
+
+.lang-rust .hljs-title {
+  color: #795da3;
+}
+
+.lang-scss {
+
+  .hljs-class,
+  .hljs-id,
+  .hljs-pseudo {
+    color: #795da3;
+  }
+}
+
+.lang-stylus {
+
+  .hljs-class,
+  .hljs-id,
+  .hljs-pseudo,
+  .hljs-title {
+    color: #795da3;
+  }
+}
+
+.lang-swift .hljs-title,
+.lang-xml .hljs-attribute {
+  color: #795da3;
+}
+
+.lang-coffeescript {
+
+  .hljs-attribute,
+  .hljs-reserved {
+    color: #1d3e81;
+  }
+}
+
+.lang-diff {
+  .hljs-chunk {
+    font-weight: 700;
+  }
+
+  .hljs-addition {
+    color: #55a532;
+    background-color: #eaffea;
+  }
+
+  .hljs-deletion {
+    color: #bd2c00;
+    background-color: #ffecec;
+  }
+}
+
+.lang-markdown .hljs-link_url {
+  text-decoration: underline;
+}

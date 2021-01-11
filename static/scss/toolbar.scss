@@ -1,0 +1,16 @@
+#side-toolbar {
+    bottom: 20px;
+    position: fixed;
+    font-size: 12px;
+    z-index: 1999;
+
+    .buttons li {
+        display: block;
+        width: 100%;
+
+        a i {
+            font-size: 24px;
+            text-align: center;
+        }
+    }
+}
