@@ -24,19 +24,21 @@
                 </div>
                 <div id="searchResult">
                     {{ if ne .Keyword ""}}
-                    <div class="info">
-                        本次搜索找到结果 {{ .Count }} 条
-                    </div>
-
                     {{ if eq .Count 0}}
                     <div class="no-result">没有找到任何结果，请更换查询词试试~</div>
                     <div class="item">
                         <div class="title">或者试试 Google 站内搜索： 
-                            <a target="_blank" href="https://www.google.com/?q=site:{{.Host}} {{.Keyword}}">
-                            site:{{.Host}} {{ .Keyword }}</a>
+                            <a id="googlesearch" target="_blank" href=""></a>
                         </div>
                     </div>
-                    {{ else }}
+                    {{ end }}
+                    {{ if gt .Count 0}}
+                    <div class="info">
+                        本次搜索找到结果 {{ .Count }} 条
+                        <div>试试 Google 站内搜索： 
+                            <a id="googlesearch" target="_blank" href=""></a>
+                        </div>
+                    </div>
                     {{ range $k, $v := .Posts }}
                     <div class="item">
                         <div class="title"><a href="/post/{{$v.Path}}.html">{{$v.Title}}</a></div>
@@ -49,6 +51,10 @@
                     {{ end }}
                     {{ end }}
                     {{ end }}
+                    <script>
+                        googlesearch.href = "https://www.google.com/?q=site:"+window.location.host+" {{.Keyword}}";
+                        googlesearch.innerHTML = "site:"+window.location.host+" {{.Keyword}}";
+                    </script>
                 </div>
             </div>
         </article>

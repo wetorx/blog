@@ -87,7 +87,6 @@ func SearchView(ctx echo.Context) error {
 	}
 	return ctx.Render(http.StatusOK, "search.html", map[string]interface{}{
 		"Keyword": keyword,
-		"Host":    ctx.Request().URL.Host,
 		"Posts":   mods,
 		"Count":   total,
 		"Naver":   naver,
