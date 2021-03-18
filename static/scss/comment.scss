@@ -1,6 +1,7 @@
+@import "colors";
 #comments {
-    border-top: 1px solid #333333;
-    border-bottom: 1px solid #444444;
+    border-top: 1px solid $black5;
+    border-bottom: 1px solid $black7;
     padding: 30px 0;
     min-height: 350px;
 

@@ -1,5 +1,12 @@
-### 一个 go语言实现的博客 
-#### 技术栈
+# 一个 go语言实现的博客 
+### 开发记录
+### 下一步
+- 黑色模式
+- 左侧导航栏动画效果
+- 代码展示功能
+
+
+### 技术栈
 - golang
 - vue
 - echo 框架
@@ -7,7 +14,7 @@
 
 ### 预览地址
 
-[https://blog.zxysilent.com/](https://blog.zxysilent.com/)
+[https://blog.wetorx.cn/](https://blog.wetorx.cn/)
 
 ### 开发原因 
 - 现在自己使用博客系统不方便管理、部署和二次开发
@@ -78,10 +85,3 @@ git clone https://github.com/zxysilent/blog.git
 ## Donation
 If this project help you a lot, you can support us by:
 
-AliPay
-
-![image](./data/imgs/alipay.png)
-
-Wechat Pay
-
-![image](./data/imgs/wechatpay.png)

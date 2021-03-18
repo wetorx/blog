@@ -1,5 +1,6 @@
+@import "colors";
 article {
-    border: 1px solid #383838;
+    border: 1px solid $black6;
     padding: 20px;
     margin: 20px 0;
     position: relative;
@@ -8,14 +9,14 @@ article {
     .meta {
         position: relative;
         float: right;
-        color: #CCCCCC;
+        color: $white4;
         font-size: .9em;
         line-height: 2;
         width: auto;
         text-align: right;
 
         a {
-            color: #777;
+            color: $gray2 ;
         }
 
         .comment,
@@ -26,14 +27,14 @@ article {
     }
 
     h1.title {
-        color: #EEEEEE;
+        color: $white5;
         font-size: 2em;
         font-weight: 500;
         line-height: 35px;
         margin-bottom: 30px;
 
         div {
-            background-color: #888;
+            background-color: $gray3;
             width: 5px;
             height: 76px;
             left: 0;
@@ -42,10 +43,10 @@ article {
         }
 
         a {
-            color: #EEEEEE;
+            color: $white5;
 
             &:hover {
-                color: #2479CC;
+                color: $color2;
                 transition: color 0.3s;
             }
         }
@@ -57,29 +58,20 @@ article {
         cursor: pointer;
         padding: .625em .5em;
         box-shadow: inset 0 -5px 20px rgba(0, 0, 0, 0.1);
-        background: #12b0e6;
-        color: #fff;
+        background: $color3;
+        color: $white1;
         font-size: 14px;
         margin-top: 10px;
         -webkit-appearance: button;
     }
 
     input.runcode {
-        line-height: 1;
-        border: none;
-        cursor: pointer;
-        padding: .625em .5em;
-        box-shadow: inset 0 -5px 20px rgba(0, 0, 0, 0.1);
-        background: #12b0e6;
-        color: #fff;
-        font-size: 14px;
-        margin-top: 10px;
-        -webkit-appearance: button;
+        @extend button;
 
         &:active,
         &:focus,
         &:hover {
-            background: #f6ad08;
+            background: $color4;
         }
     }
 
@@ -94,8 +86,8 @@ article {
     blockquote {
         margin: 10px 0 0 0;
         padding: 15px 20px;
-        border-left: 5px solid #2479CC;
-        background-color: #333333;
+        border-left: 5px solid $color2;
+        background-color: $black5;
 
         p {
             margin-bottom: 0;
@@ -112,7 +104,7 @@ article {
         font-size: 80%;
         margin: 0 2px;
         padding: 4px 5px;
-        background-color: #353535;
+        background-color: $bg2;
         vertical-align: middle;
         border-radius: 5px;
     }
@@ -122,9 +114,9 @@ article {
         font-size: 14px;
         tab-size: 4;
         line-height: 1.6;
-        color: #202020;
+        color: $font2;
         padding: .6em;
-        border-left: 5px solid #ccc;
+        border-left: 5px solid $white4;
         word-break: break-all;
         word-wrap: break-word;
         position: relative;
@@ -156,7 +148,7 @@ article {
     img {
         padding: 0;
         display: block;
-        border: 1px solid #383838;
+        border: 1px solid $black6;
         margin: 10px 0 5px 0;
         max-width: 100%;
         -webkit-filter: brightness(75%);
@@ -287,15 +279,15 @@ article {
         transition: color 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99), border 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99);
 
         &:hover {
-            color: #2479CC;
-            border-color: #2479CC;
+            color: $color2;
+            border-color: $color2;
         }
     }
 
     .app-code {
         >ul {
             list-style: decimal;
-            background-color: #fff;
+            background-color: $white1;
             margin: 0;
             margin-left: 40px;
             padding: 0;
@@ -340,7 +332,7 @@ article {
 
         code {
             font-size: 14px;
-            background-color: #fff;
+            background-color: $white1;
             border: 1px solid #eee;
             padding: 0;
             line-height: 26px;

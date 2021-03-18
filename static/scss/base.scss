@@ -1,5 +1,12 @@
 @import "colors";
 
+
+html {
+    width: 100%;
+    height: 100%;
+    background-color: $bg1;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -13,15 +20,7 @@ body {
     font-family: "Helvetica Neue", Arial, "Hiragino Sans GB", STHeiti, "Microsoft YaHei";
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
-    width: 100%;
-    height: 100%;
-    background-color: $bg1;
-}
-
-html {
-    width: 100%;
-    height: 100%;
-    background-color: $bg1;
+    @extend html;
 }
 
 h1,
@@ -35,12 +34,11 @@ h6 {
 }
 
 a {
-    color: #00a0d8;
+    color: $color1;
     text-decoration: none;
 
     &:hover {
-        color: #00a0d8;
-        text-decoration: none;
+        @extend a;
     }
 }
 
@@ -71,7 +69,7 @@ body.side {
 
 h1.intro {
     padding: 20px 30px;
-    background-color: #252528;
+    background-color: $black2;
     text-align: center;
-    color: #AAAAAA;
+    color: $gray4;
 }

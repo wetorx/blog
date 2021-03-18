@@ -85,10 +85,7 @@ body.side #header .btn-bar {
         overflow: hidden;
 
         img {
-            width: 30px;
-            height: 30px;
-            border-radius: 30px;
-            overflow: hidden;
+            @extend a.me;
         }
 
         position: absolute;

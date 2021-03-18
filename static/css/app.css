@@ -1,4 +1,10 @@
 @charset "UTF-8";
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: #222222;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -12,15 +18,6 @@ body {
   font-family: "Helvetica Neue", Arial, "Hiragino Sans GB", STHeiti, "Microsoft YaHei";
   -webkit-font-smoothing: antialiased;
   -webkit-overflow-scrolling: touch;
-  width: 100%;
-  height: 100%;
-  background-color: #222222;
-}
-
-html {
-  width: 100%;
-  height: 100%;
-  background-color: #222222;
 }
 
 h1,
@@ -33,12 +30,7 @@ h6 {
   padding: 0;
 }
 
-a {
-  color: #00a0d8;
-  text-decoration: none;
-}
-
-a:hover {
+a, a:hover {
   color: #00a0d8;
   text-decoration: none;
 }
@@ -72,7 +64,7 @@ h1.intro {
   padding: 20px 30px;
   background-color: #252528;
   text-align: center;
-  color: #AAAAAA;
+  color: #A7B6C2;
 }
 
 @font-face {
@@ -733,7 +725,7 @@ body.side #header .btn-bar i {
   bottom: 16px;
 }
 
-#header a.me {
+#header a.me, #header a.me img {
   width: 30px;
   height: 30px;
   border-radius: 30px;
@@ -741,13 +733,6 @@ body.side #header .btn-bar i {
   position: absolute;
   right: 10px;
   top: 10px;
-}
-
-#header a.me img {
-  width: 30px;
-  height: 30px;
-  border-radius: 30px;
-  overflow: hidden;
 }
 
 article {
@@ -769,7 +754,7 @@ article .meta {
 }
 
 article .meta a {
-  color: #777;
+  color: #777777;
 }
 
 article .meta .comment,
@@ -787,7 +772,7 @@ article h1.title {
 }
 
 article h1.title div {
-  background-color: #888;
+  background-color: #888888;
   width: 5px;
   height: 76px;
   left: 0;
@@ -804,27 +789,14 @@ article h1.title a:hover {
   transition: color 0.3s;
 }
 
-article button {
+article button, article input.runcode {
   line-height: 1;
   border: none;
   cursor: pointer;
   padding: .625em .5em;
   box-shadow: inset 0 -5px 20px rgba(0, 0, 0, 0.1);
   background: #12b0e6;
-  color: #fff;
-  font-size: 14px;
-  margin-top: 10px;
-  -webkit-appearance: button;
-}
-
-article input.runcode {
-  line-height: 1;
-  border: none;
-  cursor: pointer;
-  padding: .625em .5em;
-  box-shadow: inset 0 -5px 20px rgba(0, 0, 0, 0.1);
-  background: #12b0e6;
-  color: #fff;
+  color: #ffffff;
   font-size: 14px;
   margin-top: 10px;
   -webkit-appearance: button;
@@ -853,7 +825,7 @@ article blockquote p {
   margin-bottom: 0;
 }
 
-article blockquote a {
+article blockquote a, article blockquote a:hover {
   word-break: break-all;
   word-wrap: break-word;
 }
@@ -875,7 +847,7 @@ article pre {
   line-height: 1.6;
   color: #202020;
   padding: .6em;
-  border-left: 5px solid #ccc;
+  border-left: 5px solid #CCCCCC;
   word-break: break-all;
   word-wrap: break-word;
   position: relative;
@@ -1036,7 +1008,7 @@ article.tags section a:hover {
 
 article .app-code > ul {
   list-style: decimal;
-  background-color: #fff;
+  background-color: #ffffff;
   margin: 0;
   margin-left: 40px;
   padding: 0;
@@ -1079,7 +1051,7 @@ article .entry-content pre .app-code {
 
 article .entry-content pre code {
   font-size: 14px;
-  background-color: #fff;
+  background-color: #ffffff;
   border: 1px solid #eee;
   padding: 0;
   line-height: 26px;
