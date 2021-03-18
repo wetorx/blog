@@ -1,6 +1,6 @@
-@import "colors";
+@import "style.dark";
 article {
-    border: 1px solid $black6;
+    border: 1px solid $border3;
     padding: 20px;
     margin: 20px 0;
     position: relative;
@@ -9,14 +9,14 @@ article {
     .meta {
         position: relative;
         float: right;
-        color: $white4;
+        color: $color9 ;
         font-size: .9em;
         line-height: 2;
         width: auto;
         text-align: right;
 
         a {
-            color: $gray2 ;
+            color: $color10 ;
         }
 
         .comment,
@@ -27,14 +27,14 @@ article {
     }
 
     h1.title {
-        color: $white5;
+        color: $color4;
         font-size: 2em;
         font-weight: 500;
         line-height: 35px;
         margin-bottom: 30px;
 
         div {
-            background-color: $gray3;
+            background-color: $color1;
             width: 5px;
             height: 76px;
             left: 0;
@@ -43,10 +43,10 @@ article {
         }
 
         a {
-            color: $white5;
+            color: $color11 ;
 
             &:hover {
-                color: $color2;
+                color: $color5 ;
                 transition: color 0.3s;
             }
         }
@@ -58,8 +58,8 @@ article {
         cursor: pointer;
         padding: .625em .5em;
         box-shadow: inset 0 -5px 20px rgba(0, 0, 0, 0.1);
-        background: $color3;
-        color: $white1;
+        background: $bg16 ;
+        color: $color15 ;
         font-size: 14px;
         margin-top: 10px;
         -webkit-appearance: button;
@@ -71,7 +71,7 @@ article {
         &:active,
         &:focus,
         &:hover {
-            background: $color4;
+            background: $color13;
         }
     }
 
@@ -86,8 +86,8 @@ article {
     blockquote {
         margin: 10px 0 0 0;
         padding: 15px 20px;
-        border-left: 5px solid $color2;
-        background-color: $black5;
+        border-left: 5px solid $border13;
+        background-color: $bg3 ;
 
         p {
             margin-bottom: 0;
@@ -104,7 +104,7 @@ article {
         font-size: 80%;
         margin: 0 2px;
         padding: 4px 5px;
-        background-color: $bg2;
+        background-color: $bg4;
         vertical-align: middle;
         border-radius: 5px;
     }
@@ -114,9 +114,9 @@ article {
         font-size: 14px;
         tab-size: 4;
         line-height: 1.6;
-        color: $font2;
+        color: $color14 ;
         padding: .6em;
-        border-left: 5px solid $white4;
+        border-left: 5px solid $border4 ;
         word-break: break-all;
         word-wrap: break-word;
         position: relative;
@@ -148,12 +148,15 @@ article {
     img {
         padding: 0;
         display: block;
-        border: 1px solid $black6;
+        border: 1px solid $border4 ;
         margin: 10px 0 5px 0;
         max-width: 100%;
-        -webkit-filter: brightness(75%);
-        filter: brightness(75%);
+        @if $mode == 1 {
+            -webkit-filter: brightness(75%);
+            filter: brightness(75%);
+        }
     }
+   
 
     table {
         border: 0;
@@ -166,13 +169,13 @@ article {
 
         th {
             border: 0;
-            border-bottom: 2px solid #848484;
+            border-bottom: 2px solid $border7;
             text-align: left;
             padding: 6px 20px;
         }
 
         td {
-            border-bottom: 1px solid #d0d0d0;
+            border-bottom: 1px solid $border14;
             padding: 6px 20px;
         }
     }
@@ -180,18 +183,18 @@ article {
     .expire-tips {
         padding: 5px 10px;
         font-size: 15px;
-        border: 1px solid #e2e2e2;
-        background-color: #ffffc0;
-        border-left: 5px solid #fff000;
-        color: #333;
+        border: 1px solid $border8 ;
+        background-color: $bg5;
+        border-left: 5px solid $border9;
+        color: $color11;
     }
 
     .aliyun-tips {
         padding: 5px 10px;
         font-size: 15px;
-        border: 1px solid #e2e2e2;
-        background-color: #f0f8f4;
-        border-left: 5px solid #7cc4a0;
+        border: 1px solid $border8;
+        background-color: $bg6;
+        border-left: 5px solid $border12;
     }
 
     .post-info {
@@ -204,7 +207,7 @@ article {
         word-wrap: break-word;
 
         .date {
-            color: #999;
+            color: $color7;
             font-size: 14px;
             font-style: italic;
         }
@@ -279,15 +282,15 @@ article {
         transition: color 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99), border 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99);
 
         &:hover {
-            color: $color2;
-            border-color: $color2;
+            color: $color5;
+            border-color: $border13;
         }
     }
 
     .app-code {
         >ul {
             list-style: decimal;
-            background-color: $white1;
+            background-color: $bg7;
             margin: 0;
             margin-left: 40px;
             padding: 0;
@@ -295,16 +298,16 @@ article {
 
         li {
             list-style: decimal-leading-zero;
-            border-left: 1px solid #ddd;
+            border-left: 1px solid $border3;
             padding: 0 10px;
             position: relative;
 
             &.mark {
-                background-color: #fffbdd !important;
+                background-color: $bg8 !important;
             }
 
             &:hover {
-                background-color: #f3f3f3 !important;
+                background-color: $bg9 !important;
             }
         }
 
@@ -319,21 +322,21 @@ article {
         }
 
         li:nth-of-type(even) {
-            background-color: #fcfcfc;
+            background-color: $bg10;
             color: inherit;
         }
     }
 
     .entry-content pre {
         .app-code {
-            background-color: #eee;
+            background-color: $bg2;
             overflow-x: auto;
         }
 
         code {
             font-size: 14px;
-            background-color: $white1;
-            border: 1px solid #eee;
+            background-color: $bg7;
+            border: 1px solid $border2 ;
             padding: 0;
             line-height: 26px;
         }

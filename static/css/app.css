@@ -8,7 +8,7 @@ html, body {
 body {
   margin: 0;
   padding: 0;
-  color: #DDDDDD;
+  color: #EEEEEE;
   -webkit-text-size-adjust: none;
   -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99);
   transition: -webkit-transform 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99);
@@ -31,7 +31,7 @@ h6 {
 }
 
 a, a:hover {
-  color: #00a0d8;
+  color: #48AFF0;
   text-decoration: none;
 }
 
@@ -62,9 +62,9 @@ body.side {
 
 h1.intro {
   padding: 20px 30px;
-  background-color: #252528;
+  background-color: #f6f9fa;
   text-align: center;
-  color: #A7B6C2;
+  color: #999999;
 }
 
 @font-face {
@@ -689,7 +689,7 @@ body.side #header .btn-bar i {
 }
 
 #header h1 a {
-  color: #999;
+  color: #999999;
 }
 
 #header .btn-bar {
@@ -705,7 +705,7 @@ body.side #header .btn-bar i {
   height: 1px;
   position: absolute;
   left: 14px;
-  background-color: #999;
+  background-color: #999999;
   -webkit-transition: all 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99) 0.3s;
   transition: all 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99) 0.3s;
 }
@@ -785,7 +785,7 @@ article h1.title a {
 }
 
 article h1.title a:hover {
-  color: #2479CC;
+  color: #48AFF0;
   transition: color 0.3s;
 }
 
@@ -817,7 +817,7 @@ article em {
 article blockquote {
   margin: 10px 0 0 0;
   padding: 15px 20px;
-  border-left: 5px solid #2479CC;
+  border-left: 5px solid #48AFF0;
   background-color: #333333;
 }
 
@@ -879,7 +879,7 @@ article pre b.name {
 article img {
   padding: 0;
   display: block;
-  border: 1px solid #383838;
+  border: 1px solid #CCCCCC;
   margin: 10px 0 5px 0;
   max-width: 100%;
   -webkit-filter: brightness(75%);
@@ -914,7 +914,7 @@ article .expire-tips {
   border: 1px solid #e2e2e2;
   background-color: #ffffc0;
   border-left: 5px solid #fff000;
-  color: #333;
+  color: #EEEEEE;
 }
 
 article .aliyun-tips {
@@ -936,7 +936,7 @@ article .entry-content {
 }
 
 article .entry-content .date {
-  color: #999;
+  color: #999999;
   font-size: 14px;
   font-style: italic;
 }
@@ -1002,13 +1002,13 @@ article.tags section a {
 }
 
 article.tags section a:hover {
-  color: #2479CC;
-  border-color: #2479CC;
+  color: #48AFF0;
+  border-color: #48AFF0;
 }
 
 article .app-code > ul {
   list-style: decimal;
-  background-color: #ffffff;
+  background-color: #222222;
   margin: 0;
   margin-left: 40px;
   padding: 0;
@@ -1016,7 +1016,7 @@ article .app-code > ul {
 
 article .app-code li {
   list-style: decimal-leading-zero;
-  border-left: 1px solid #ddd;
+  border-left: 1px solid #383838;
   padding: 0 10px;
   position: relative;
 }
@@ -1045,14 +1045,14 @@ article .app-code li:nth-of-type(even) {
 }
 
 article .entry-content pre .app-code {
-  background-color: #eee;
+  background-color: #eeeeee;
   overflow-x: auto;
 }
 
 article .entry-content pre code {
   font-size: 14px;
-  background-color: #ffffff;
-  border: 1px solid #eee;
+  background-color: #222222;
+  border: 1px solid #EEEEEE;
   padding: 0;
   line-height: 26px;
 }
@@ -1126,10 +1126,10 @@ a.anchor {
 #searchResult .no-result {
   padding: 5px;
   margin: 15px 0;
-  border: 1px solid #fc3;
+  border: 1px solid #ffcc33;
   background-color: #fff4c2;
   font-size: 13px;
-  color: #222222;
+  color: #202020;
 }
 
 #searchResult .loading {
@@ -1157,8 +1157,8 @@ a.anchor {
 
 #searchResult .item .title .type {
   display: inline-block;
-  background-color: #eee;
-  color: #888;
+  background-color: #eeeeee;
+  color: #888888;
   margin-right: 8px;
   padding: 0 5px;
   font-size: 13px;
@@ -1177,12 +1177,12 @@ a.anchor {
 
 #searchResult .item .tags a {
   margin-right: 12px;
-  color: #666;
+  color: #666666;
 }
 
 #searchResult .item .desc b,
 #searchResult .item .title b {
-  color: #C00;
+  color: #CC0000;
   font-weight: 400;
 }
 
@@ -1200,7 +1200,7 @@ a.anchor {
 
 #comments {
   border-top: 1px solid #333333;
-  border-bottom: 1px solid #444444;
+  border-bottom: 1px solid #383838;
   padding: 30px 0;
   min-height: 350px;
 }
@@ -1217,7 +1217,7 @@ a.anchor {
   line-height: 20px;
   position: relative;
   border-top: 1px solid #333333;
-  border-bottom: 1px solid #444444;
+  border-bottom: 1px solid #383838;
   padding: 20px 0;
   overflow: hidden;
 }

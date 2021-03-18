@@ -1,16 +1,16 @@
-@import "colors";
+@import "style.dark";
 
 
 html {
     width: 100%;
     height: 100%;
-    background-color: $bg1;
+    background-color: $bg7 ;
 }
 
 body {
     margin: 0;
     padding: 0;
-    color: $font1;
+    color: $color4;
     -webkit-text-size-adjust: none;
     -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99);
     transition: -webkit-transform 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99);
@@ -34,7 +34,7 @@ h6 {
 }
 
 a {
-    color: $color1;
+    color: $color5 ;
     text-decoration: none;
 
     &:hover {
@@ -60,7 +60,7 @@ body.side {
 }
 
 #main {
-    background-color: $bg1;
+    background-color: $bg7;
     padding-left: 290px;
     padding-right: 40px;
     max-width: 1390px;
@@ -69,7 +69,7 @@ body.side {
 
 h1.intro {
     padding: 20px 30px;
-    background-color: $black2;
+    background-color: $bg12 ;
     text-align: center;
-    color: $gray4;
+    color: $color7;
 }

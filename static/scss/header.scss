@@ -1,3 +1,4 @@
+@import "style.dark";
 #header {
     display: none;
     width: 100%;
@@ -8,7 +9,7 @@
     left: 0;
     top: 0;
     z-index: 9;
-    background-color: #323436;
+    background-color: $bg14 ;
 }
 
 body.side #header .btn-bar {
@@ -39,7 +40,7 @@ body.side #header .btn-bar {
         font-size: 16px;
 
         a {
-            color: #999;
+            color: $color18;
         }
     }
 
@@ -57,7 +58,7 @@ body.side #header .btn-bar {
             height: 1px;
             position: absolute;
             left: 14px;
-            background-color: #999;
+            background-color: $bg15;
             -webkit-transition: all 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99) 0.3s;
             transition: all 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99) 0.3s;
         }

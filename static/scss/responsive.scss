@@ -1,4 +1,4 @@
-@import "colors";
+@import "style.dark";
 
 /* responsive */
 @media screen and (max-width: 768px) {
@@ -149,7 +149,7 @@
         }
 
         .desc {
-            color: #999;
+            color: $color7;
             font-size: 14px;
         }
 

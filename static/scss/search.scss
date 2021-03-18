@@ -1,4 +1,4 @@
-@import "colors";
+@import "style.dark";
 #search {
     .wrapper {
         margin-right: 72px;
@@ -10,14 +10,15 @@
 
     .wrapper input {
         -webkit-appearance: none;
-        border: 1px solid #484848;
-        background-color: #353535;
-        color: #D5D5D5;
-        -webkit-text-fill-color: #D5D5D5;
+        border: 1px solid $border5 ;
+        @if $mode == 1 {
+            background-color: #353535;
+            color: #D5D5D5;
+            -webkit-text-fill-color: #D5D5D5;
 
-        /*输入文字、placeholder颜色*/
-        caret-color: #FFFFFF;
-
+            /*输入文字、placeholder颜色*/
+            caret-color: #FFFFFF;
+        }
         /*光标颜色*/
         border-radius: 0;
         box-sizing: border-box;
@@ -31,11 +32,11 @@
 
     .submit {
         -webkit-appearance: none;
-        background-color: #686868;
-        border: 1px solid #484848;
+        background-color: $bg11 ;
+        border: 1px solid $border5;
         border-left: 0;
         border-radius: 0;
-        color: #EEEEEE;
+        color: $color4;
         display: block;
         font-size: 16px;
         height: 40px;
@@ -52,10 +53,10 @@
     overflow-x: hidden;
 
     .info {
-        color: #979797;
+        color: $color16;
         font-size: 13px;
         padding: 15px 0;
-        border-bottom: 1px solid #333333;
+        border-bottom: 1px solid $border10;
 
         div {
             float: right;
@@ -65,10 +66,12 @@
     .no-result {
         padding: 5px;
         margin: 15px 0;
-        border: 1px solid #fc3;
-        background-color: #fff4c2;
+        border: 1px solid $border11;
+        background-color: $bg1 ;
         font-size: 13px;
-        color: $bg1;
+        @if $mode == 1{
+            color: #202020;
+        }
     }
 
     .loading {
@@ -85,19 +88,21 @@
 
     .item {
         padding: 8px 10px;
-        border-top: 2px solid #444444;
+        border-top: 2px solid $border6 ;
 
         .title {
             a {
                 font-size: 16px;
                 text-decoration: underline;
-                color: #40c0ec;
+                @if $mode == 1{
+                    color: #40c0ec;
+                }
             }
 
             .type {
                 display: inline-block;
-                background-color: #eee;
-                color: #888;
+                background-color: $bg2;
+                color: $color1;
                 margin-right: 8px;
                 padding: 0 5px;
                 font-size: 13px;
@@ -116,13 +121,13 @@
 
             a {
                 margin-right: 12px;
-                color: #666;
+                color: $color2;
             }
         }
 
         .desc b,
         .title b {
-            color: #C00;
+            color: $color3;
             font-weight: 400;
         }
     }
