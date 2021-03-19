@@ -111,7 +111,7 @@
       link.setAttribute('type', 'text/css');
       link.setAttribute('href', '//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css');
       //(doc.head || doc.body).appendChild(link);
-      (doc.head || doc.body).insertBefore(link,(doc.head || doc.body).firstChild);
+      (doc.head || doc.body).insertBefore(link,doc.getElementById('css'));
   
       var s = doc.createElement('script');
       s.src = '//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js';
