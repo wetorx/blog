@@ -3,9 +3,7 @@
 package router
 
 import (
-
-	// docs
-	_ "blog/docs"
+	// docs	_ "blog/docs"
 	"bytes"
 	"sync"
 	"time"
@@ -16,7 +14,8 @@ import (
 )
 
 const AppJsUrl = "/static/js/app.js"
-const AppCssUrl = "/static/css/app.css"
+const AppCssUrl = "/static/css/app.default.css"
+const AppCss2Url = "/static/css/app.dark.css"
 
 var pool *sync.Pool
 

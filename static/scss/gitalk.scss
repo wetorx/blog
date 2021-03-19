@@ -1,4 +1,3 @@
-@import "colors";
 .gt-header-textarea {
   background: #363636 !important;
   color: #DDDDDD;
@@ -8,9 +7,6 @@
   background: #363636 !important;
 }
 
-.gt-btn-preview {
-  background: $white4 !important;
-}
 
 .gt-comment-content {
   background: #363636 !important;
@@ -20,11 +16,11 @@
   }
 
   .gt-comment-body {
-    color: $white4 !important;
+    color: #CCCCCC !important;
 
     &:hover pre {
-      background: $white4 !important;
-      color: $black5;
+      background: #CCCCCC !important;
+      color: #333333;
     }
 
     pre {
@@ -32,3 +28,27 @@
     }
   }
 }
+.markdown-body {
+  color: #AAAAAA;
+}
+
+.gt-container {
+  .gt-popup {
+    background-color: #222222;
+    border-color: #444444;
+  }
+  .gt-copyright {
+    border-color: #555555;
+  }
+  .gt-meta{
+    border-color: #484848;
+  }
+  .gt-btn{
+    background-color:#315098;
+  }
+  .gt-btn-preview{
+    background-color: #333333;
+  }
+  
+}
+

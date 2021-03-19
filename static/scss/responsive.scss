@@ -1,4 +1,3 @@
-@import "style.dark";
 
 /* responsive */
 @media screen and (max-width: 768px) {
@@ -156,6 +155,12 @@
         p.more {
             font-size: 14px;
             margin: 5px 0;
+        }
+
+        h1.title {
+            div {
+                display: none;
+            }
         }
     }
 }

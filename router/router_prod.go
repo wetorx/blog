@@ -8,7 +8,8 @@ import (
 )
 
 const AppJsUrl = "/static/js/app.min.js"
-const AppCssUrl = "/static/css/app.min.css"
+const AppCssUrl = "/static/css/app.default.min.css"
+const AppCss2Url = "/static/css/app.dark.min.css"
 
 func init() {
 	logs.SetLevel(logs.WARN)

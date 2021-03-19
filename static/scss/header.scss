@@ -1,4 +1,4 @@
-@import "style.dark";
+
 #header {
     display: none;
     width: 100%;
@@ -87,6 +87,8 @@ body.side #header .btn-bar {
 
         img {
             @extend a.me;
+            right: 0;
+            top: 0;
         }
 
         position: absolute;

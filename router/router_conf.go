@@ -17,7 +17,6 @@ import (
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 	"github.com/zxysilent/utils"
-
 )
 
 var funcMap template.FuncMap
@@ -82,6 +81,7 @@ func (t *TplRender) Render(w io.Writer, name string, data interface{}, ctx echo.
 	if mp, is := data.(map[string]interface{}); is {
 		mp["appjs"] = AppJsUrl
 		mp["appcss"] = AppCssUrl
+		mp["appcss_dark"] = AppCss2Url
 		mp["title"] = model.MapOpts.MustGet("title")
 		mp["favicon"] = model.MapOpts.MustGet("favicon")
 		mp["comment"] = model.MapOpts.MustGet("comment")

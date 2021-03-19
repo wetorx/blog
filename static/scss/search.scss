@@ -1,4 +1,4 @@
-@import "style.dark";
+
 #search {
     .wrapper {
         margin-right: 72px;
@@ -67,7 +67,7 @@
         padding: 5px;
         margin: 15px 0;
         border: 1px solid $border11;
-        background-color: $bg1 ;
+        background-color: $bg18 ;
         font-size: 13px;
         @if $mode == 1{
             color: #202020;

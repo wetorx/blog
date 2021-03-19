@@ -10,5 +10,5 @@
         }
     ],
     "easysass.targetDir": "static/css",
-    "easysass.excludeRegex": "^(?!app.scss)"
+    "easysass.excludeRegex": "^(?!app.*.scss)"
 }

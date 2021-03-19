@@ -1,10 +1,11 @@
-@import "style.dark";
+
 article {
     border: 1px solid $border3;
     padding: 20px;
     margin: 20px 0;
     position: relative;
     word-wrap: break-word;
+    background-color: $bg1;
 
     .meta {
         position: relative;
@@ -290,7 +291,7 @@ article {
     .app-code {
         >ul {
             list-style: decimal;
-            background-color: $bg7;
+            background-color: $bg17;
             margin: 0;
             margin-left: 40px;
             padding: 0;
@@ -331,6 +332,9 @@ article {
         .app-code {
             background-color: $bg2;
             overflow-x: auto;
+            @if $mode == 1 {
+                color: #b2b2b2;
+            }
         }
 
         code {

@@ -1,7 +1,7 @@
 $mode : 1;
 
 $border1 : #333333; //#footer ;#comments ;.pagination 
-$border2 : #EEEEEE; //article;article .entry-content pre code
+$border2 : #333333; //article;article .entry-content pre code
 $border3 : #383838; //article .app-code li;#comments ;.pagination 
 $border4 : #CCCCCC; //article pre; article img
 $border5 : #484848; //#search .submit
@@ -15,22 +15,24 @@ $border11 : #ffcc33; //#searchResult .no-result
 $border12 : #7cc4a0; //article .aliyun-tips
 $border13 : #48AFF0; //article.tags section a:hover
 
-$bg1 : #fff4c2; //#searchResult .no-result
-$bg2 : #eeeeee; //#searchResult .item .title .type;article .entry-content pre .app-code 
+$bg1 : #181a1d; //article
+$bg2 : #444444; //#searchResult .item .title .type;article .entry-content pre .app-code 
 $bg3 : #333333;//article blockquote
 $bg4 : #353535; //article code 
 $bg5 : #ffffc0; //article .expire-tips
 $bg6 : #f0f8f4; //article .aliyun-tips
-$bg7 : #222222; //html ;#main ;article .app-code>ul;article .entry-content pre code;article input.runcode;@media article
-$bg8 : #fffbdd; //article .app-code li.mark 
-$bg9 : #f3f3f3; //article .app-code li:hover 
-$bg10 : #fcfcfc; //article .app-code li:nth-of-type(even) 
+$bg7 : #1e2225; //html ;#main ;article .entry-content pre code;article input.runcode;@media article
+$bg8 : #161616; //article .app-code li.mark 
+$bg9 : #202020; //article .app-code li:hover 
+$bg10 : #484848; //article .app-code li:nth-of-type(even) 
 $bg11 : #686868; //#search .submit
-$bg12 : #f6f9fa; //h1.intro 
+$bg12 : #282828; //h1.intro 
 $bg13 : #1D1D22;//#sidebar
 $bg14 : #323436;//#header
 $bg15 : #999999;//#header .btn-bar:before
 $bg16 : #12b0e6;//article input.runcode
+$bg17 : #383838;//article .app-code>ul
+$bg18 : #fff4c2; //#searchResult .no-result
 
 $color1 : #888888;//#searchResult .item .title .type ;article h1.title div
 $color2 : #666666;//#searchResult .item .tags a ;#footer .beian
